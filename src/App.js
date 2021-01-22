@@ -106,7 +106,7 @@ function App() {
                 </Content>
 
 
-            <Footer style={{ textAlign: 'center' }}> 2021 © Created by IT-дизель</Footer>
+            <Footer style={{ textAlign: 'center' }}> © Created by IT-дизель</Footer>
         </Layout>
 )
 }
