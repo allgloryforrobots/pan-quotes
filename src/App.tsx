@@ -7,7 +7,6 @@ import ModalAsync from "./ModalAsunc"
 import firebase from "firebase/app"
 import 'firebase/firestore'
 import {useCollection} from "react-firebase-hooks/firestore"
-
 const {Content, Footer} = Layout
 
 
@@ -30,7 +29,7 @@ if (!firebase.apps.length) {
     }
 }
 
-function App() {
+const App: React.FC = () => {
 
     const messagesRef = firebase.firestore().collection('quotes')
     const query = messagesRef.limit(25)
@@ -71,13 +70,13 @@ function App() {
                 <Content style={{padding: '15px 25px', minHeight: '100vh'}}>
                     <Space size={[4, 16]} wrap>
                         {
-                            quotes ? quotes.docs.filter(quote => {
+                            quotes ? quotes.docs.filter((quote: { id: string }) => {
                                 if (izbr === 'izbr') {
                                     return Object.keys(localStorage).indexOf(quote.id) > -1
                                 }
                                 return true
 
-                            }).map(quote => {
+                            }).map((quote: { data: () => { (): any; new(): any; author: React.ReactNode; quote: React.ReactNode }; id: string }) => {
                             return <Card title={quote.data().author}
                                          key={Math.random()}
                                   bordered={false}
@@ -106,5 +105,6 @@ function App() {
         </Layout>
 )
 }
+
 
 export default App

@@ -1,16 +1,17 @@
-import React from 'react'
+import React, {useState} from "react";
 import {Button, Form, Input, Modal} from 'antd'
 import firebase from "firebase/app"
 import 'firebase/firestore'
 
 
 
-const ModalAsync = () => {
+const ModalAsync: React.FC = () => {
     const layout = {
         labelCol: { span: 5 },
         wrapperCol: { span: 16 },
     }
-    const onValuesChange = values => {
+
+    const onValuesChange = (values: { author: React.SetStateAction<string>; quote: React.SetStateAction<string>; }) => {
         if (values.author) {
             setAuthor(values.author)
         }
@@ -19,10 +20,10 @@ const ModalAsync = () => {
         }
     }
 
-    const [visible, setVisible] = React.useState(false)
-    const [confirmLoading, setConfirmLoading] = React.useState(false)
-    const [author, setAuthor] = React.useState('')
-    const [quote, setQuote] = React.useState('')
+    const [visible, setVisible] = useState<boolean>(false)
+    const [confirmLoading, setConfirmLoading] = useState<boolean>(false)
+    const [author, setAuthor] = useState<string>('')
+    const [quote, setQuote] = useState<string>('')
 
 
     const showModal = () => {
