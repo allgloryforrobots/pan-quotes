@@ -41,7 +41,7 @@ const ModalAsync = () => {
         setTimeout(() => {
             setVisible(false)
             setConfirmLoading(false)
-        }, 0)
+        }, 1)
     }
 
     const handleCancel = () => {

@@ -1,4 +1,3 @@
-import './App.css'
 import 'antd/dist/antd.css'
 import React, {useState} from "react"
 import {Button, Layout, Space, Spin} from 'antd'
@@ -38,9 +37,6 @@ function App() {
     const [quotes, loading, error] = useCollection(query)
     const [izbr, setIzbr] = useState('normal')
 
-    const onHandleClick = () => {
-
-    }
 
     return (
         <Layout className="layout">
